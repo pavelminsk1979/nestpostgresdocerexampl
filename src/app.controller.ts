@@ -6,7 +6,12 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  async getUsers() {
+    return this.appService.getUsers();
+  }
+
+  @Get('new')
+  async createUsers() {
+    return this.appService.createUsers();
   }
 }
